@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/navigation/site-header';
-// @ts-expect-error Next.js processes global CSS imports at build time.
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 
