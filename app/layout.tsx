@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/navigation/site-header';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata: Metadata = {
   title: { default: 'Amiral Documentation', template: '%s · Amiral' },
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <SpeedInsights />
         <Analytics />
         <SiteHeader />
         {children}
