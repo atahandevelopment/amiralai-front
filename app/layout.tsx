@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/navigation/site-header';
+// @ts-expect-error Next.js processes global CSS imports at build time.
 import './globals.css';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   title: { default: 'Amiral Documentation', template: '%s · Amiral' },
@@ -21,6 +23,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
       </head>
       <body>
+        <Analytics />
         <SiteHeader />
         {children}
         <footer className="site-footer">
