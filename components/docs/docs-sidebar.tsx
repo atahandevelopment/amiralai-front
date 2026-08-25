@@ -16,16 +16,16 @@ const links = [
 export function DocsSidebar() {
   const pathname = usePathname();
   return (
-    <aside className="border-b border-slate-800 py-6 lg:sticky lg:top-16 lg:h-[calc(100vh-4rem)] lg:border-b-0 lg:border-r lg:pr-8">
+    <div className="docs-nav">
       <nav aria-label="Documentation">
-        <p className="mono mb-3 text-xs text-slate-500">CONCEPTS</p>
-        <ul className="space-y-3 text-sm">
+        <p className="mono docs-nav-label">DOCUMENTATION</p>
+        <ul>
           {links.map(([label, href]) => {
             const active = pathname === href;
             return (
               <li key={href}>
                 <Link
-                  className={active ? 'text-cyan-300' : undefined}
+                  className={active ? 'active' : undefined}
                   href={href}
                   aria-current={active ? 'page' : undefined}
                 >
@@ -36,6 +36,6 @@ export function DocsSidebar() {
           })}
         </ul>
       </nav>
-    </aside>
+    </div>
   );
 }

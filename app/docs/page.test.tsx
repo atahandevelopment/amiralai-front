@@ -6,9 +6,10 @@ import Docs from './page';
 describe('Docs landing page', () => {
   it('links to the configuration guide', () => {
     render(<Docs />);
-    expect(screen.getByRole('link', { name: /Configuration/ })).toHaveAttribute(
-      'href',
-      '/docs/configuration',
-    );
+    expect(
+      screen
+        .getAllByRole('link', { name: /Configuration/ })
+        .every((link) => link.getAttribute('href') === '/docs/configuration'),
+    ).toBe(true);
   });
 });

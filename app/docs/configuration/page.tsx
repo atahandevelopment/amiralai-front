@@ -71,7 +71,7 @@ const Anchor = ({ id, children }: { id: string; children: React.ReactNode }) => 
   <h2 id={id} className="scroll-mt-20">
     <a href={`#${id}`}>
       {children}{' '}
-      <span aria-hidden="true" className="text-slate-600">
+      <span aria-hidden="true" className="anchor-mark">
         #
       </span>
     </a>
@@ -81,9 +81,9 @@ const Anchor = ({ id, children }: { id: string; children: React.ReactNode }) => 
 const Setting = ({ name, children }: { name: string; children: React.ReactNode }) => (
   <div className="doc-card">
     <dt>
-      <code className="mono text-cyan-300">{name}</code>
+      <code className="technical-label">{name}</code>
     </dt>
-    <dd className="mt-2 text-slate-400">{children}</dd>
+    <dd className="body-copy">{children}</dd>
   </div>
 );
 
@@ -92,8 +92,8 @@ export default function ConfigurationPage() {
     <main className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[13rem_minmax(0,1fr)_11rem]">
       <DocsSidebar />
       <article className="prose min-w-0 py-12">
-        <p className="mono text-sm text-cyan-300">REFERENCE / CONFIGURATION</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+        <p className="page-kicker">REFERENCE / CONFIGURATION</p>
+        <h1 className="page-title">
           Configure your team with <code>team.yaml</code>
         </h1>
         <p className="text-lg">
@@ -230,7 +230,7 @@ workflows:  # Request type → instruction file`}</code>
             <section className="doc-card min-w-0" key={name} aria-labelledby={`agent-${name}`}>
               <h3 id={`agent-${name}`}>
                 <code>{name}</code>{' '}
-                <span className="text-sm font-normal text-slate-400">
+                <span className="metadata">
                   {role} · priority {priority}
                 </span>
               </h3>
@@ -257,15 +257,15 @@ workflows:  # Request type → instruction file`}</code>
           are current examples, not a claim about every supported workflow name.
         </p>
         <p>
-          <Link href="/architecture" className="text-cyan-300">
+          <Link href="/architecture" className="text-link">
             See how configuration fits the architecture →
           </Link>
         </p>
       </article>
       <aside className="hidden py-12 text-sm lg:block">
         <nav aria-label="On this page">
-          <p className="mono mb-3 text-xs text-slate-500">ON THIS PAGE</p>
-          <ul className="space-y-3 text-slate-400">
+          <p className="metadata mono mb-3">ON THIS PAGE</p>
+          <ul className="contents-links space-y-3">
             {[
               ['Overview', 'overview'],
               ['Team', 'team'],

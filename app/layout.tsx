@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { SiteHeader } from '@/components/navigation/site-header';
-import { themeScript } from '@/lib/theme-bootstrap';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -10,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -18,14 +17,21 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {/* eslint-disable-next-line @next/next/no-page-custom-font */}
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&family=Inter:wght@400;500&display=swap"
         />
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         <SiteHeader />
         {children}
-        <footer className="site-footer">Amiral documentation · Repository-backed examples</footer>
+        <footer className="site-footer">
+          <div>
+            <strong>Amiral</strong>
+            <span>Documentation for dependency-aware agent orchestration.</span>
+          </div>
+          <a href="https://github.com/atahandevelopment/amiral-ai" target="_blank" rel="noreferrer">
+            GitHub<span className="sr-only"> (opens in a new tab)</span>
+          </a>
+        </footer>
       </body>
     </html>
   );

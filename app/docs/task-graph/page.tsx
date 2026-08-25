@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 const Anchor = ({ id, children }: { id: string; children: React.ReactNode }) => (
   <h2 id={id}>
-    <a href={`#${id}`} className="hover:text-cyan-300">
+    <a href={`#${id}`} className="anchor-link">
       {children}{' '}
-      <span aria-hidden="true" className="text-slate-600">
+      <span aria-hidden="true" className="anchor-mark">
         #
       </span>
     </a>
@@ -23,10 +23,8 @@ export default function TaskGraphPage() {
     <main className="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[13rem_minmax(0,1fr)_11rem]">
       <DocsSidebar />
       <article className="prose min-w-0 py-12">
-        <p className="mono text-sm text-cyan-300">CONCEPTS / TASK GRAPH</p>
-        <h1 className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
-          Intelligent Task Graph
-        </h1>
+        <p className="page-kicker">CONCEPTS / TASK GRAPH</p>
+        <h1 className="page-title">Intelligent Task Graph</h1>
         <p className="text-lg">
           A plan is a directed graph: each task names an owner and dependencies. The Lead can
           dispatch a pending task only after every dependency completes.
@@ -56,7 +54,7 @@ export default function TaskGraphPage() {
           deterministic failures should not be retried blindly.
         </p>
         <Anchor id="lifecycle">Lifecycle</Anchor>
-        <pre className="mono overflow-auto border-y border-slate-800 p-5 text-sm">
+        <pre className="lifecycle-code mono overflow-auto p-5 text-sm">
           <code>
             pending → in_progress → completed{`\n`} ↘ failed → retry_wait → in_progress{`\n`}pending
             → blocked | cancelled
@@ -78,8 +76,8 @@ export default function TaskGraphPage() {
         </p>
       </article>
       <aside className="hidden py-12 text-sm lg:block">
-        <p className="mono mb-3 text-xs text-slate-500">ON THIS PAGE</p>
-        <ul className="space-y-3 text-slate-400">
+        <p className="metadata mono mb-3">ON THIS PAGE</p>
+        <ul className="contents-links space-y-3">
           <li>
             <a href="#scheduling">Scheduling</a>
           </li>
