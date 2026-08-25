@@ -1,0 +1,11 @@
+node_modules
+.opencode
+.next
+out
+coverage
+plans
+tasks
+.amiral
+package-lock.json
+*.tsbuildinfo
+*.md

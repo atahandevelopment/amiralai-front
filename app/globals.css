@@ -1,0 +1,173 @@
+@import 'tailwindcss';
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted-background);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent-background);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  color-scheme: light;
+  --background: #f8fcff;
+  --surface: #e3f2fd;
+  --surface-strong: #90caf9;
+  --accent: #0d47a1;
+  --accent-bright: #2196f3;
+  --ink: #082642;
+  --muted: #38556f;
+  --line: #90caf9;
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #ffffff;
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted-background: var(--surface);
+  --muted-foreground: var(--muted);
+  --accent-background: var(--surface-strong);
+  --accent-foreground: var(--ink);
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--accent-bright);
+  --radius: 0.625rem;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --background: #061a2d;
+  --surface: #0a2947;
+  --surface-strong: #0d47a1;
+  --accent: #90caf9;
+  --accent-bright: #2196f3;
+  --ink: #e3f2fd;
+  --muted: #b7d8ee;
+  --line: #24577e;
+  --foreground: var(--ink);
+  --card: var(--surface);
+  --card-foreground: var(--ink);
+  --primary: var(--accent);
+  --primary-foreground: #061a2d;
+  --secondary: var(--surface);
+  --secondary-foreground: var(--ink);
+  --muted-background: var(--surface);
+  --muted-foreground: var(--muted);
+  --accent-background: var(--surface-strong);
+  --accent-foreground: var(--ink);
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--accent-bright);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--ink);
+  font-family: 'Funnel Sans', 'Inter', Arial, sans-serif;
+  font-optical-sizing: auto;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Elms Sans', 'Funnel Sans', 'Inter', Arial, sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+:focus-visible {
+  outline: 3px solid var(--accent-bright);
+  outline-offset: 3px;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.prose h2 {
+  scroll-margin-top: 6rem;
+  font-size: 1.55rem;
+  margin-top: 3.5rem;
+}
+.prose p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+.site-header {
+  border-color: var(--line);
+  background: color-mix(in srgb, var(--background) 94%, transparent);
+}
+.site-footer {
+  border-top: 1px solid var(--line);
+  padding: 2.5rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+.theme-toggle {
+  min-width: 2.5rem;
+  color: var(--ink);
+  cursor: pointer;
+}
+.text-cyan-300 {
+  color: var(--accent) !important;
+}
+.bg-cyan-300 {
+  background: var(--accent-bright) !important;
+}
+.text-slate-950 {
+  color: #061a2d !important;
+}
+.text-slate-300,
+.text-slate-400,
+.text-slate-500,
+.text-slate-600 {
+  color: var(--muted) !important;
+}
+.border-slate-600,
+.border-slate-700,
+.border-slate-800 {
+  border-color: var(--line) !important;
+}
+.bg-slate-950 {
+  background: var(--surface) !important;
+}
+.hover\:bg-slate-800:hover {
+  background: var(--surface-strong) !important;
+}
+.doc-card {
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  padding: 1.25rem;
+}
+.command {
+  overflow-x: auto;
+  border-left: 4px solid var(--accent-bright);
+  background: var(--surface);
+  padding: 1rem;
+  color: var(--ink);
+}

@@ -1,0 +1,17 @@
+# >>> Amiral >>>
+/tasks/*/
+/tasks/.active-workflow
+/plans/
+/.amiral/amiral.lock
+team.yaml
+.opencode
+.amiral
+# <<< Amiral <<<
+
+# Next.js
+/node_modules/
+/.next/
+/.next-dev/
+/out/
+/coverage/
+*.tsbuildinfo
